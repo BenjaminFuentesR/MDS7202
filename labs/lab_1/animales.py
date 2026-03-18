@@ -1,8 +1,7 @@
 def animales(input):
-
-    '''
+    """
     Como hace el animalito?
-    '''
+    """
 
     if input.lower() == "gato":
         print("miau")
