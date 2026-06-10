@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-with open("models/best_model.pkl", "rb") as f:
+with open("labs/lab_8/models/best_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 
