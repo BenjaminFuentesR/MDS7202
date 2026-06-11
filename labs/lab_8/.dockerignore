@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.git
+.env
+venv/
+.venv/
+mlruns/
+plots/
+Dockerfile
+.dockerignore
+optimize.py
+*.log
