@@ -12,8 +12,20 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
+from pathlib import Path
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
+
+
+
+os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
+
+base_dir = Path(__file__).resolve().parent if '__file__' in globals() else Path.cwd()
+mlruns_path = base_dir / "mlruns"
+
+mlflow.set_tracking_uri(f"file:///{mlruns_path.as_posix()}")
+
+
 
 EXPERIMENT_NAME = "Water Potability XGBoost"
 RANDOM_STATE = 42
@@ -89,8 +101,8 @@ def optimize_model():
     print(f"Modelo guardado en {model_path}")
 
     # Generar requirements.txt
-    os.system("pip freeze > requirements.txt")
-    print("requirements.txt generado")
+    os.system("uv export --no-hashes --no-color > requirements.txt")
+    print("requirements.txt generado con uv export")
 
 
 if __name__ == "__main__":
