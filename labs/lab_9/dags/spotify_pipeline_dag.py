@@ -1,22 +1,20 @@
 # Escribe aquí tu código (copia el template y completa los TODOs)
 
-from pathlib import Path
 import time
-import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+from pathlib import Path
 
+import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from datetime import datetime
-
 from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
 
-
-DATA_DIR = Path("/root/airflow/data") 
+DATA_DIR = Path("/root/airflow/data")
 OUTPUT_PATH = Path("/tmp/spotify_data.parquet")
 
 PARAM_COLS = [
@@ -66,6 +64,7 @@ def build_pipeline(n_jobs: int = -1) -> Pipeline:
 
 # ── Funciones de las tareas de Airflow ───────────────────────────────────────
 
+
 def task_load_data_fn(**context):
     """
     Carga 5 batches de datos en paralelo y guarda el resultado en disco.
@@ -76,13 +75,13 @@ def task_load_data_fn(**context):
     """
 
     # Se cargan 5 batches de datos en paralelo.
-    df = load_all_parallel(DATA_DIR, n_batches = 5)
+    df = load_all_parallel(DATA_DIR, n_batches=5)
 
     # Se guardan los archivos en formato parquet.
-    df.to_parquet(OUTPUT_PATH, index = False)
+    df.to_parquet(OUTPUT_PATH, index=False)
 
     # Se usa XCom para pasar la ruta del archivo.
-    context['ti'].xcom_push(key = 'file_path', value = str(OUTPUT_PATH))
+    context["ti"].xcom_push(key="file_path", value=str(OUTPUT_PATH))
 
 
 def task_train_model_fn(**context):
@@ -97,7 +96,7 @@ def task_train_model_fn(**context):
     """
 
     # Se obtiene la ruta del archivo a través de XCom.
-    file_path = context['ti'].xcom_pull(task_ids = 'load_data', key = 'file_path')
+    file_path = context["ti"].xcom_pull(task_ids="load_data", key="file_path")
 
     # Se leen los datos formato parquet.
     df = pd.read_parquet(file_path)
@@ -109,14 +108,13 @@ def task_train_model_fn(**context):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Se entrena el modelo.
-    pipeline = build_pipeline(n_jobs = -1)
+    pipeline = build_pipeline(n_jobs=-1)
 
     t0 = time.perf_counter()
     pipeline.fit(X_train, y_train)
     training_time = time.perf_counter() - t0
 
     print(f"Tiempo total de entrenamiento: {training_time:.2f} [s].")
-
 
 
 # ── Definición del DAG ────────────────────────────────────────────────────────
