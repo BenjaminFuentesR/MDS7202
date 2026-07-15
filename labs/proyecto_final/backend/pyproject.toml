@@ -9,13 +9,6 @@ dependencies = [
     "pandas",
     "cloudpickle",
     "langchain-google-genai",
-    "scikit-learn", 
+    "scikit-learn",
     "python-dotenv"
 ]
-
-
-
-
-
-
-

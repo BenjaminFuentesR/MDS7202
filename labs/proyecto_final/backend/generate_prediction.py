@@ -2,13 +2,10 @@
 
 
 # Librerías.
-import pandas as pd
 import cloudpickle
+import pandas as pd
 from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-
-
-
 
 # Preparación.
 
@@ -23,9 +20,7 @@ with open(MODEL_PATH, "rb") as f:
     pipeline_modelo = cloudpickle.load(f)
 
 # Se inicializa el cliente de Embeddings de Gemini.
-embeddings_client = GoogleGenerativeAIEmbeddings(model = "models/gemini-embedding-001", output_dimensionality = 1024)
-
-
+embeddings_client = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", output_dimensionality=1024)
 
 
 # Main.
@@ -38,7 +33,7 @@ def generate_prediction(asunto: str, contenido: str, canal: str, categoria: str)
     # Se vectoriza como gemini.
     text_to_embedding = f"Asunto_Ticket: {asunto}\nContenido_Ticket: {contenido}\n"
     vector_embedding = embeddings_client.embed_query(text_to_embedding)
-    
+
     # Se estructuran los datos según lo que espera el pipeline.
     combined_text = f"{asunto} {contenido}".strip()
     n_chars = len(combined_text)
@@ -47,7 +42,7 @@ def generate_prediction(asunto: str, contenido: str, canal: str, categoria: str)
         "N_Caracteres_Ticket": [n_chars],
         "Canal_Ticket": [canal],
         "Categoría_Problema": [categoria],
-        "Texto": [combined_text]
+        "Texto": [combined_text],
     }
 
     # Se agregan los embeddings.
@@ -55,19 +50,15 @@ def generate_prediction(asunto: str, contenido: str, canal: str, categoria: str)
         data_dict[f"embedding_dim_{i + 1}"] = [valor]
 
     df_input = pd.DataFrame(data_dict)
-    
 
     # Se hace la predicción.
     predictions = pipeline_modelo.predict(df_input)
-    
+
     return str(predictions[0])
-
-
 
 
 # terminal.
 if __name__ == "__main__":
-
     print("-" * 50)
     print("Prueba predicción de ticket")
     print("-" * 50)
@@ -75,10 +66,10 @@ if __name__ == "__main__":
 
     # Se carga el dataset original.
     df_tickets = pd.read_parquet(f"{ROOT_PATH}data/tickets.parquet")
-    
+
     # Se selecciona un ticket al azar.
     sample_ticket = df_tickets.sample(1, random_state=42).iloc[0]
-    
+
     # Se extraen los campos necesarios.
     test_asunto = sample_ticket["Asunto_Ticket"]
     test_contenido = sample_ticket["Contenido_Ticket"]
@@ -95,10 +86,8 @@ if __name__ == "__main__":
 
     # Se hace la predicción.
     result = generate_prediction(
-        asunto = test_asunto,
-        contenido = test_contenido,
-        canal = test_canal,
-        categoria = test_categoria)
+        asunto=test_asunto, contenido=test_contenido, canal=test_canal, categoria=test_categoria
+    )
 
     print(f"Predicción del modelo: {result}")
     print(f"Prioridad real: {prioridad_real}")
