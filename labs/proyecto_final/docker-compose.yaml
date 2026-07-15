@@ -1,0 +1,39 @@
+services:
+
+  backend:
+    build: ./backend
+    image: imagen-backend # Nombre imagen.
+    container_name: contenedor-backend # Nombre contenedor.
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend # Mapeo de volúmenes para el código.
+      - /app/.venv           
+      - ./modelo_final.pkl:/app/modelo_final.pkl
+      - .data:/app/data
+    env_file:
+      - .env # Variables tomadas del .env.
+    command: uv run uvicorn backend.main:app --host 0.0.0.0 --port 8000
+    networks:
+      - red_interna # Red interna.
+
+
+  frontend:
+    build: ./frontend
+    image: imagen-frontend # Nombre imagen.
+    container_name: contenedor-frontend # Nombre contenedor.
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./frontend:/app # Mapeo de volúmenes para el código.
+      - /app/.venv    
+    env_file:
+      - .env # Variables tomadas del .env.                        
+    environment:
+      - BACKEND_URL=http://backend:8000/predict # Variable para que el frontend encuentre la API.
+      - IS_DOCKER=true
+    networks:
+      - red_interna # Red interna
+
+networks:
+  red_interna: # Definición de la red interna.
