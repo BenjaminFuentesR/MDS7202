@@ -1,0 +1,38 @@
+[
+  {
+    "asunto": "URGENTE: Transferencias no autorizadas y falla en bloqueo de cuenta",
+    "contenido": "Buenas tardes. Me parece una falta de respeto total la nula seguridad de su plataforma. Hace menos de una hora me llegaron tres notificaciones de transferencias por montos altos a destinatarios que jamas he agregado en mi cuenta. Intente bloquear la tarjeta digital desde la app y esta se quedo pegada, no me dejo hacer nada. \r\n\r\nExijo una explicacion inmediata de como pudieron vulnerar mi cuenta de esta manera. Se supone que una institucion que gestiona patrimonio deberia tener protocolos de seguridad minimos, no este sistema amateur. Ya di de baja mi acceso y realice el bloqueo bancario por mi cuenta, pero necesito que reviertan estos movimientos a la brevedad. No voy a perder ni un peso por culpa de la negligencia de ChaucherApp. Quedo atento a la confirmacion de la reversa de los fondos antes de escalar esto a instancias legales superiores. Es inaceptable que tenga que estar pasando por esto un domingo por la tarde. Solucionen esto ya.",
+    "canal": "Whatsapp",
+    "categoria": "Fraude"
+  },
+  {
+    "asunto": "URGENTE: Transferencias no reconocidas y error en la app",
+    "contenido": "Hola, necesito una solución urgente con mi cuenta. Acabo de revisar mis movimientos en la aplicación y aparecen tres transferencias que yo nunca hice, hacia una cuenta de terceros que ni siquiera conozco. Es una cantidad importante de dinero y estoy muy preocupado por la seguridad de mis fondos.\r\n\r\nEs inaceptable que ocurra algo así en una plataforma que se supone es segura. Intenté bloquear mis tarjetas de inmediato a través de la app, pero el sistema se quedó pegado y no me dejó realizar ninguna acción, así que espero que me ayuden luego antes de que me sigan vaciando la cuenta. Quedo atento a su respuesta porque necesito recuperar esos montos a la brevedad; no puedo permitirme esperar días sin una solución clara.",
+    "canal": "Página Web",
+    "categoria": "Fraude"
+  },
+  {
+    "asunto": "Error al actualizar correo electrónico: bloqueado por seguridad",
+    "contenido": "Hola, buenas tardes. Escribo porque estoy tratando de actualizar mis datos personales en la aplicacion, especificamente el cambio de mi correo electronico porque el que tenia registrado ya no lo uso y se me perdio la clave. \r\n\r\nYa intente hacer el proceso desde el menu de configuracion, pero me aparece un mensaje que dice que los datos estan bloqueados por validacion de seguridad. Me gustaria saber que pasos debo seguir para poder actualizarlo o si necesito enviar algun documento adicional para verificar que soy el titular de la cuenta, ya que uso harto la tarjeta digital y me preocupa no recibir los comprobantes de las transferencias. \r\n\r\nQuedo atento a lo que me indiquen para poder solucionar esto pronto. Gracias.",
+    "canal": "Whatsapp",
+    "categoria": "Otro"
+  },
+  {
+    "asunto": "Error al iniciar sesión en nuevo celular por dispositivo vinculado",
+    "contenido": "hola oye lo que pasa es que me cambie de celu y baje la chaucherapp pero cuando pongo mis datos pa entrar me sale un error raro que dice algo de un dispositivo vinculado no se que onda si me pueden ayudar pa poder ver si tengo unas chaucheras guardas de cuando trabajaba en la feria que no cacho si me quedaron ahi o se me perdieron por cambiar de aparato, igual no es urgente pero me gustaria cachar si pierdo la plata o no, gracias espero que me digan algo pronto",
+    "canal": "Whatsapp",
+    "categoria": "Cuenta"
+  },
+  {
+    "asunto": "Transferencia no recibida y error en historial de transacciones",
+    "contenido": "Estimados, me dirijo a ustedes con extrema molestia para presentar un reclamo formal por un error crítico en su plataforma que, hasta el momento, me ha impedido disponer de mis fondos.\r\n\r\nEl día de hoy, cerca de las 14:00 horas, intenté realizar una transferencia electrónica hacia mi cuenta de banco personal desde mi saldo en ChaucherApp. El proceso mostró el mensaje de confirmación habitual, descontándose la totalidad del monto de mi saldo disponible. Sin embargo, el dinero nunca llegó a mi cuenta de destino y, al intentar verificar el estado de la operación, la aplicación muestra un error de servidor interno, impidiéndome visualizar el historial de transacciones o siquiera acceder al apartado de movimientos recientes.\r\n\r\nEs inaceptable que una aplicación que gestiona dinero de sus usuarios presente fallas de esta envergadura. Hablamos de una suma significativa de dinero que necesitaba para cumplir con compromisos financieros impostergables. Ya he intentado cerrar sesión, borrar la caché y reinstalar la app en mi dispositivo sin ningún resultado positivo. La falta de acceso a mis recursos no solo me causa un perjuicio económico directo, sino una pérdida de tiempo considerable que me obliga a contactarlos por este canal ante la ausencia de una solución inmediata en la interfaz.\r\n\r\nSolicito encarecidamente que me entreguen una respuesta concreta y la restitución inmediata de mis fondos o, en su defecto, la acreditación definitiva de la transferencia. Espero que un equipo técnico revise esto a la brevedad, ya que esta situación, además de negligente, afecta mi confianza absoluta en el servicio que ustedes dicen ofrecer. Quedo atento a la resolución pronta de este incidente antes de elevar mi reclamo a las instancias regulatorias correspondientes.",
+    "canal": "Whatsapp",
+    "categoria": "Técnica"
+  },
+  {
+    "asunto": "Problema con transferencia: dinero descontado y transacción fallida",
+    "contenido": "Hola, necesito una solución urgente con mi cuenta. Acabo de intentar realizar una transferencia importante a través de la app y, a pesar de que el dinero ya se descontó de mi saldo disponible, la transacción figura como \"fallida\" en el historial y el destinatario aún no recibe nada. \r\n\r\nEs inaceptable que ocurra algo así en una plataforma que se supone debe ser confiable para manejar mis finanzas personales. He intentado actualizar la app y reiniciar el sistema, pero el problema persiste y tengo compromisos de pago que dependen directamente de esa transferencia. Exijo que revisen esto de inmediato y me reintegren los fondos o regularicen la situación lo antes posible, ya que no puedo estar con mi capital retenido sin una explicación clara por parte de ustedes. Quedo atento a una respuesta pronta.",
+    "canal": "Whatsapp",
+    "categoria": "Cuenta"
+  }
+]

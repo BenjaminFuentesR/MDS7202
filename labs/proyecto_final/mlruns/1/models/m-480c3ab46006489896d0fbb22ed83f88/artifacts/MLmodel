@@ -1,0 +1,24 @@
+artifact_path: "file:c:/Users/fuent/Documentos/Universidad/7mo a\xF1o/13vo Semestre/Laboratorio\
+  \ de Programaci\xF3n Cient\xEDfica para DS/MDS7202/labs/proyecto_final/mlruns/1/models/m-480c3ab46006489896d0fbb22ed83f88/artifacts"
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-480c3ab46006489896d0fbb22ed83f88
+model_size_bytes: 9569587
+model_uuid: m-480c3ab46006489896d0fbb22ed83f88
+prompts: null
+run_id: c45e00fd7c404f04a9701af0b0f6bcf7
+utc_time_created: '2026-07-11 01:46:26.588304'
